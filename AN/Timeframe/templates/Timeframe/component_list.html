@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h2><a class="btn btn-default" href="{% url 'Timeframe_component_list' %}">Component Listing</a></h2>
+<table class="table">
+<tr>
+    <td>ID</td>
+    <td>Link</td>
+    <td>created</td>
+    <td>last_updated</td>
+    <td>notes</td>
+    <td>task</td>
+    <td>time spent</td>
+    <td>completed</td>
+</tr>
+{% for object in object_list %}
+<tr>
+    <td>{{object.pk}}</td>
+    <td><a href="{{object.get_absolute_url}}">{{object}}</a></td>
+    <td>{{ object.created }}</td>
+    <td>{{ object.last_updated }}</td>
+    <td>{{ object.notes }}</td>
+    <td>{{ object.task }}</td>
+    <td>{{ object.time_spent }} minutes</td>
+    <td>{{ object.completed }}</td>
+</tr>
+{% endfor %}
+</table><a class="btn btn-primary" href="{% url 'Timeframe_component_create' %}">Create new Component</a>
+<h3><a href="{% url 'Timeframe_task_list' %}">See Tasks</a></h3>
+{% endblock %}
