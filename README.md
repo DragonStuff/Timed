@@ -3,3 +3,11 @@
 
 
 Simple Django App that allows you to store components of a task as part of a project in order to track time in the most basic way possible.
+
+This is a standard Django application. Simply run:
+
+`cd AN`
+
+`python manage.py runserver`
+
+Then access the address it returns.
